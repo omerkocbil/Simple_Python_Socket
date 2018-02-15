@@ -2,6 +2,9 @@ import socket
 import sys
 
 # Create a TCP/IP socket
+
+# The type of communications between the two endpoints, 
+# typically SOCK_STREAM for connection-oriented protocols and SOCK_DGRAM for connectionless protocols.
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 ip_address = "127.0.0.1"
