@@ -5,10 +5,9 @@ import sys
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Connect the socket to the port where the server is listening
-ip_address = "172.16.17.154"
-socket_port = 3000
+ip_address = "127.0.0.1"
+socket_port = 3002
 server_address = (ip_address,socket_port)
-print >>sys.stderr, 'connecting to %s port %s' % server_address
 sock.connect(server_address)
 
 try:    
@@ -20,8 +19,7 @@ try:
        
         data = sock.recv(16)
         amount_received += len(data)
-        print >>sys.stderr, 'received %s' % data
+        print(data.decode())
 
 finally:
-    print >>sys.stderr, 'closing socket'
     sock.close()
