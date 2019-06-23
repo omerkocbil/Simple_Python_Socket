@@ -8,7 +8,7 @@ import sys
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 ip_address = "127.0.0.1"
-socket_port = 3002
+socket_port = 4000
 # Bind the socket to the port
 server_address = (ip_address,socket_port)
 print ("#######################################################")
@@ -21,13 +21,13 @@ def forward():
     connection.send("W".encode())
     print("W gönderildi")
 def left():
-    connection.send("A")
+    connection.send("A".encode())
     print("A gönderildi")
 def right():
-    connection.send("D")
+    connection.send("D".encode())
     print("D gönderildi")
 def backward():
-    connection.send("S")
+    connection.send("S".encode())
     print("S gönderildi")
 
 while True:
